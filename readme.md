@@ -14,6 +14,6 @@
 2. Type this command:
 
 gradle clean test
-
+<!--
 ## Report View & Screen Rec.
-![Rest_api_image](https://user-images.githubusercontent.com/93866513/166152866-ec568474-6bcc-4d20-a6b9-154268be21b9.jpg)
+![Rest_api_image](https://user-images.githubusercontent.com/93866513/166152866-ec568474-6bcc-4d20-a6b9-154268be21b9.jpg) -->
