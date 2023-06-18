@@ -24,5 +24,8 @@ public class TestRuner {
         TestCase user=new TestCase();
         user.queryUserInfoFindAll();
     }
+    public void UserInfoFindOne() throws IOException, ConfigurationException {
+        TestCase user=new TestCase();
+    }
 
 }
