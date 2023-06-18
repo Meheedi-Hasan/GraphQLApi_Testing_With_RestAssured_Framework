@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestRuner" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-18T08:48:10" hostname="DESKTOP-0SGIEQL" time="8.648">
+  <properties/>
+  <testcase name="UserInfoFindAll()" classname="TestRuner" time="8.648"/>
+  <system-out><![CDATA[Request method:	POST
+Request URI:	https://stg-connect-console-web-gateway.paywithconnect.com/graphql
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhNjA1YjM4LTliOGYtNDIzNS1hNWUxLTcwM2MzZjg4ZTI5OSIsImdreWNfdXNlcl9pZCI6ImU5OTgzOTFlLWE5MTItNDExZC1iMzIyLWUyNmU0ZGJkZjdjNyIsInVzZXJfY2F0ZWdvcnlfaWQiOiJlNWM3ZmVjNi1lNTk1LTRkZWQtYTgzNy1iZjJmYWUyMWYxNDEiLCJyb2xlX3R5cGVfaWQiOiI5OGQzNDMwNi01NTQwLTQ5ZDMtYWYxNi0xMmI1M2ZjMGUwNzQiLCJjb25uZWN0X2lkIjoiKzg4MDEzMDM4NjU5ODYiLCJhcHBfaWQiOiI0YmIxMjEwZi03MzdhLTQ0YzItODM2NS01OGQ4ODlmMjc1MDQiLCJkZXZpY2VfaWQiOiI2ODRjMGY5OS01YTdhLTRkMWItYmFiZi02ZWMzMjc0OGIyNzUiLCJkZXZpY2VfcGxhdGZvcm1fdHlwZV9pZCI6IjAxYTM5ZjYyLWY1ZjQtNGNiMi04NzBlLWRlZDE0OGRmOTZiOCIsImdreWNfY2F0ZWdvcnlfaWQiOiI0NjIxZGY2Yi0zZGNkLTRlYzAtOTkyMC02MmFiYjBiY2I2OTciLCJpYXQiOjE2ODcwNzgwMTIsImV4cCI6MTY4NzEwODAxMn0.4uMyKAPTU6UDZi8qgUJJTYdYg-4zFBq4JQhormdR7e8
+				x-device-id=684c0f99-5a7a-4d1b-babf-6ec32748b275
+				x-app-id=4bb1210f-737a-44c2-8365-58d889f27504
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "query": "query ConnectConsoleUserServiceUserInformationFindAll {\r\n  connectConsoleUserServiceUserInformationFindAll {\r\n    connect_id\r\n    last_name\r\n  }\r\n}",
+    "variables": {
+        
+    },
+    "operationName": "ConnectConsoleUserServiceUserInformationFindAll"
+}
+HTTP/1.1 200 OK
+Date: Sun, 18 Jun 2023 08:48:17 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-powered-by: Express
+access-control-allow-origin: *
+etag: W/"1ac-zMHWI7DStvpNamwkKUJuh15Kjhs"
+strict-transport-security: max-age=15724800; includeSubDomains
+CF-Cache-Status: DYNAMIC
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=4%2B6UO7YmvTwbad1a9I80fXArCr1fVQNbnhOpvP%2BUu%2BnIg11nDbCXnLEPWwySGq8v79ipMrG%2FEoesn3OdkG%2FeOkPvoA%2Fshl2SnYxON60RaJZr%2BQxJ2MHtExe5dEqqswztC75uPHVB4ze2Xh3a66d4pnHXQKrAiYf%2FTFsg5k6%2F1Da9HX40ag%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 7d9245bc0e9b4011-SIN
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400
+
+{
+    "data": {
+        "connectConsoleUserServiceUserInformationFindAll": [
+            {
+                "connect_id": "+8801521315574",
+                "last_name": "Shuvo"
+            },
+            {
+                "connect_id": "+8801818315008",
+                "last_name": "Ahmad"
+            },
+            {
+                "connect_id": "+8801303865986",
+                "last_name": "Hasan"
+            },
+            {
+                "connect_id": "+8801674831500",
+                "last_name": "Haque"
+            },
+            {
+                "connect_id": "+8801722488810",
+                "last_name": "Alam"
+            },
+            {
+                "connect_id": "+8801713339998",
+                "last_name": "Ansari"
+            },
+            {
+                "connect_id": "+8801701050966",
+                "last_name": "Hossan"
+            }
+        ]
+    }
+}
++8801521315574
+Shuvo
+{"data":{"connectConsoleUserServiceUserInformationFindAll":[{"connect_id":"+8801521315574","last_name":"Shuvo"},{"connect_id":"+8801818315008","last_name":"Ahmad"},{"connect_id":"+8801303865986","last_name":"Hasan"},{"connect_id":"+8801674831500","last_name":"Haque"},{"connect_id":"+8801722488810","last_name":"Alam"},{"connect_id":"+8801713339998","last_name":"Ansari"},{"connect_id":"+8801701050966","last_name":"Hossan"}]}}
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
