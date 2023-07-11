@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class TestRuner {
+public class TestRunner {
     //POST
     //@Test(priority = 1, description = "User will be able to get the ID")
     @Test
@@ -28,6 +28,11 @@ public class TestRuner {
     public void KycRequestInformation() throws IOException, ConfigurationException {
         TestCase user=new TestCase();
         user.queryKycRequestInformation();
+    }
+    @Test
+    public void KycRequest() throws IOException, ConfigurationException {
+        TestCase user=new TestCase();
+        user.mutationKycRequest();
     }
 
 }
