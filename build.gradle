@@ -14,14 +14,13 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
     // https://mvnrepository.com/artifact/junit/junit
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
-// https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
-// https://mvnrepository.com/artifact/commons-configuration/commons-configuration
+    // https://mvnrepository.com/artifact/commons-configuration/commons-configuration
     implementation group: 'commons-configuration', name: 'commons-configuration', version: '1.10'
-    // https://mvnrepository.com/artifact/org.json/json
-    implementation 'org.json:json:20210307'
-
-
+    implementation 'org.json:json:20230227'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    //testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
 
 }
 
