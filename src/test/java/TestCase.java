@@ -68,11 +68,6 @@ public class TestCase {
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
 
-        //Mehedi Hasan account
-        //String query = "{\"query\":\"query ConnectConsoleLoginWithPassword($input: ConnectConsoleLoginWithPasswordInput!) {\\r\\n  connectConsoleLoginWithPassword(input: $input) {\\r\\n    connect_id\\r\\n    device_is_verified\\r\\n    _token\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"connect_id\":\"+8801303865986\",\"user_pass\":\"123123\"}},\"operationName\":\"ConnectConsoleLoginWithPassword\"}";
-        //String query ="{\"query\":\"query ConnectConsoleLoginWithPassword($input: ConnectConsoleLoginWithPasswordInput!) {\\r\\n  connectConsoleLoginWithPassword(input: $input) {\\r\\n    connect_id\\r\\n    device_is_verified\\r\\n    _token\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"connect_id\":\"+8801303865986\",\"user_pass\":\"123123\",\"device_token\":\"617404\"}},\"operationName\":\"ConnectConsoleLoginWithPassword\"}";
-        //Mozzammel Haque acount
-        String query = "{\"query\":\"query ConnectConsoleLoginWithPassword($input: ConnectConsoleLoginWithPasswordInput!) {\\n  connectConsoleLoginWithPassword(input: $input) {\\n    connect_id\\n    device_is_verified\\n    _token\\n  }\\n}\",\"variables\":{\"input\":{\"connect_id\":\"+8801674831500\",\"user_pass\":\"123123\"}},\"operationName\":\"ConnectConsoleLoginWithPassword\"}";
 
         Response res =
                 given()
