@@ -35,4 +35,10 @@ public class TestRunner {
         user.mutationKycRequest();
     }
 
+    @Test
+    public void KycBulkRequest() throws IOException, ConfigurationException {
+        TestCase user=new TestCase();
+        user.mutationKycBulkRequest();
+    }
+
 }
