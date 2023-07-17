@@ -17,7 +17,7 @@ gradle clean test
 Or
 gradle test -Psuite
 ````
- * After automation to view allure report , give the following commands:
+ * After running automation to view allure report , give the following commands:
 ```
 allure generate allure-results --clean -o allure-report
 allure serve allure-results
