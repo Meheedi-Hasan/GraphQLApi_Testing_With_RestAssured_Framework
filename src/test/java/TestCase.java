@@ -1,11 +1,8 @@
-package Connect_Console.connect_console_financial_service;
-
-import Connect_Console.Utils.Utils;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.apache.commons.configuration.ConfigurationException;
-import org.testng.Assert;
+import org.junit.Assert;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
