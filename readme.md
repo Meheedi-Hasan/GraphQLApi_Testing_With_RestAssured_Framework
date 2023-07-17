@@ -11,9 +11,17 @@
 
 ## Run the automation script:
 1. Open cmd to the project folder
-2. Type this command:
-
+### Run the Automation Script by the following command:
+```
 gradle clean test
+Or
+gradle test -Psuite
+````
+ * After running automation to view allure report , give the following commands:
+```
+allure generate allure-results --clean -o allure-report
+allure serve allure-results
+```
 <!--
 ## Report View & Screen Rec.
 ![Rest_api_image](https://user-images.githubusercontent.com/93866513/166152866-ec568474-6bcc-4d20-a6b9-154268be21b9.jpg) -->
