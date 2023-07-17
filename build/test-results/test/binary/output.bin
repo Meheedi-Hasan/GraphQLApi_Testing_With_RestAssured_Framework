@@ -1,24 +1,0 @@
-HTTP/1.1 200 OK
-%Date: Wed, 12 Jul 2023 11:00:07 GMT
-/Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-Connection: keep-alive
-x-powered-by: Express
- access-control-allow-origin: *
-*etag: W/"7c-sMA37C6irskN+GJp+gS9p9IkBz0"
-@strict-transport-security: max-age=15724800; includeSubDomains
-CF-Cache-Status: DYNAMIC
-ÀReport-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=wWr1mruN%2B3uP3LprzDIC%2FyiIRGDXlB%2B9tS%2BrYBjZaFKQ63tkv5YuWtoS68j1RLipguntteBWzTLWd1GZ7jyg5j94UWlrchh5s4Xywzt7DIgqc4qFimlIX9Ti5SGsVMc3rbhC7O3fQ%2F%2B3b%2F3SA3vsH%2B88xjpgCLldw9Jb3c6UgZl4Qcx%2BzQ%3D%3D"}],"group":"cf-nel","max_age":604800}
-CNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
-Server: cloudflare
-CF-RAY: 7e58c7dc7ea53366-DAC
-Content-Encoding: gzip
-alt-svc: h3=":443"; ma=86400
-
-{
-    "data": {
-z        "connectConsoleFinancialServiceKycRequestInformationClientKycBulkRequest": "File has been successfully uploaded."
-    }
-}
-2Message is: File has been successfully uploaded.
-Array is not null
