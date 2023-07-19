@@ -10,10 +10,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
     // https://mvnrepository.com/artifact/junit/junit
-    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+//    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
     testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
     // https://mvnrepository.com/artifact/commons-configuration/commons-configuration
@@ -21,8 +21,9 @@ dependencies {
     implementation 'org.json:json:20230227'
     // https://mvnrepository.com/artifact/org.testng/testng
     testImplementation group: 'org.testng', name: 'testng', version: '7.1.0'
-    // https://mvnrepository.com/artifact/io.qameta.allure/allure-gradle
-//    implementation group: 'io.qameta.allure', name: 'allure-gradle', version: '2.8.1'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.18.1'
+
 
 
 }
@@ -31,21 +32,21 @@ dependencies {
 //    useJUnitPlatform()
 //}
 
-//def suite1 = project.hasProperty("suite")
-
-//test {
-////    useTestNG() {
-////        dependsOn cleanTest
-////        useDefaultListeners = true
-////
-////        if(suite1) {
-////            suites "src/test/resources/simpleSuite.xml"
-////        }
-////    }
-////}
+def suite1 = project.hasProperty("suite")
 
 test {
     useTestNG() {
-        suites "./src/test/resources/test1.xml"
+        dependsOn cleanTest
+        useDefaultListeners = true
+
+        if(suite1) {
+            suites "src/test/resources/test1.xml"
+        }
     }
 }
+
+//test {
+//    useTestNG() {
+//        suites "./src/test/resources/test1.xml"
+//    }
+//}

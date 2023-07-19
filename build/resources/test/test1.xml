@@ -2,13 +2,13 @@
 
     <test name="Kyc Request Information Queries">
         <classes>
-            <class name="Connect_Console.connect_console_financial_service.connect_console_kyc_request_information.connect_console_kyc_request_information_queries.queries"/>
+            <class name="connect_console.connect_console_financial_service.connect_console_kyc_request_information.queries"/>
         </classes>
     </test>
 
     <test name="Kyc Request Information Mutations">
         <classes>
-            <class name="Connect_Console.connect_console_financial_service.connect_console_kyc_request_information.connect_console_kyc_request_information_mutations.mutations"/>
+            <class name="connect_console.connect_console_financial_service.connect_console_kyc_request_information.mutations"/>
         </classes>
     </test>
 
