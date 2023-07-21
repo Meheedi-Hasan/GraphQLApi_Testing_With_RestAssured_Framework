@@ -147,12 +147,11 @@ public class testcase {
         System.out.println(l_name);
     }
 
-    public void queryKycRequestInformation() throws IOException, ConfigurationException {
+    public void queryKycRequestInformationClientKycRequestsByUserAndApp() throws IOException, ConfigurationException {
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
 
-        String query = "{\"query\":\"query ConnectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp($input: PaginationInput!) {\\r\\n  connectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp(input: $input) {\\r\\n    take\\r\\n    total\\r\\n    result {\\r\\n      status\\r\\n      kyc_accounts {\\r\\n        account_number\\r\\n        account_holder_name\\r\\n        psp_branch_or_agent {\\r\\n          id\\r\\n          name\\r\\n        }\\r\\n        psp_id\\r\\n        psp_branch_or_agent_id\\r\\n        psp_account_type_id\\r\\n        psp_account_type {\\r\\n          name\\r\\n        }\\r\\n      }\\r\\n      client_app_id\\r\\n      client_app {\\r\\n        name\\r\\n      }\\r\\n    }\\r\\n    skip\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"take\":50,\"param\":{\"client_app_id\":\"ef7551e0-936a-4727-8efd-6c77a156df9e\"},\"skip\":0}},\"operationName\":\"ConnectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp\"}";
-
+        String query = "{\"query\":\"query ConnectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp($appId: String!, $input: PaginationInput!) {\\r\\n  connectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp(app_id: $appId, input: $input) {\\r\\n    result {\\r\\n      kyc_request_no\\r\\n      kyc_accounts {\\r\\n        account_holder_name\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"skip\":0,\"take\":10},\"appId\":\"ef7551e0-936a-4727-8efd-6c77a156df9e\"},\"operationName\":\"ConnectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp\"}";
         Response res =
                 given()
                         .contentType("application/json").headers("Authorization", prop.getProperty("token")).header("x-device-id", prop.getProperty("x-device-id")).header("x-app-id", prop.getProperty("x-app-id"))
@@ -169,10 +168,10 @@ public class testcase {
         System.out.println("Array is "+ value);
 
         if(value != null){
-            Assert.assertNotNull("Array is Not Empty", "data.connectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp.result[0]");
+            Assert.assertNotNull("Array is Not Empty", "data.connectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp.result");
             System.out.println("Array is Not Empty");
         } else if (value == null) {
-            Assert.assertNull("Error: Array should not be null but showing null", "data.connectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp.result[0]");
+            Assert.assertNull("Error: Array should not be null but showing null", "data.connectConsoleFinancialServiceKycRequestInformationClientKycRequestsByUserAndApp.result");
             System.out.println("Error: Array should not be null but showing null");
         }else{
             System.out.println("Errors");
@@ -196,7 +195,41 @@ public class testcase {
 //        }
     }
 
-    public void mutationKycRequest() throws IOException, ConfigurationException {
+    public void queryStatementRequestInformationClientStatementRequestsByUserAndApp() throws IOException, ConfigurationException {
+        prop.load(file);
+        RestAssured.baseURI = prop.getProperty("baseUrl2");
+
+        String query = "{\"query\":\"query ConnectConsoleFinancialServiceStatementRequestInformationClientStatementRequestsByUserAndApp($input: PaginationInput!, $appId: String!) {\\r\\n  connectConsoleFinancialServiceStatementRequestInformationClientStatementRequestsByUserAndApp(input: $input, app_id: $appId) {\\r\\n    result {\\r\\n      statement_accounts {\\r\\n        account_holder_name\\r\\n      }\\r\\n      statement_request_no\\r\\n    }\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"skip\":0,\"take\":10},\"appId\":\"ef7551e0-936a-4727-8efd-6c77a156df9e\"},\"operationName\":\"ConnectConsoleFinancialServiceStatementRequestInformationClientStatementRequestsByUserAndApp\"}";
+
+        Response res =
+                given()
+                        .contentType("application/json").headers("Authorization", prop.getProperty("token")).header("x-device-id", prop.getProperty("x-device-id")).header("x-app-id", prop.getProperty("x-app-id"))
+                        .body(query).
+                        when()
+                        .post("/graphql").
+                        then().log().all()
+                        .assertThat().statusCode(200).extract().response();
+
+        JsonPath response = res.jsonPath();
+        System.out.println(res.asString());
+
+        String value = response.get("data.connectConsoleFinancialServiceStatementRequestInformationClientStatementRequestsByUserAndApp.result").toString();
+        System.out.println("Array is "+ value);
+
+        if(value != null){
+            Assert.assertNotNull("Array is Not Empty", "data.connectConsoleFinancialServiceStatementRequestInformationClientStatementRequestsByUserAndApp.result");
+            System.out.println("Array is Not Empty");
+        } else if (value == null) {
+            Assert.assertNull("Error: Array should not be null but showing null", "data.connectConsoleFinancialServiceStatementRequestInformationClientStatementRequestsByUserAndApp.result");
+            System.out.println("Error: Array should not be null but showing null");
+        }else{
+            System.out.println("Errors");
+            Assert.fail("Errors");
+        }
+
+    }
+
+    public void mutationKycRequestInformationClientKycRequest() throws IOException, ConfigurationException {
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
         //Monir
@@ -245,7 +278,7 @@ public class testcase {
         }
     }
 
-    public void mutationKycBulkRequest() throws IOException, ConfigurationException {
+    public void mutationKycRequestInformationClientKycBulkRequest() throws IOException, ConfigurationException {
 
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
@@ -286,7 +319,7 @@ public class testcase {
         }
     }
 
-    public void mutationStatementRequest() throws IOException, ConfigurationException {
+    public void mutationStatementRequestInformationClientStatementRequest() throws IOException, ConfigurationException {
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
 
@@ -329,7 +362,7 @@ public class testcase {
         }
     }
 
-    public void mutationStatementBulkRequest() throws IOException, ConfigurationException {
+    public void mutationStatementRequestInformationClientStatementBulkRequest() throws IOException, ConfigurationException {
 
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
@@ -392,10 +425,10 @@ public class testcase {
         String value = response.get("data.connectConsoleFinancialServiceKycRequestInformationInsertOne").toString();
         //System.out.println("Array is "+ value);
 
-        if( value != null){
+        if( value != null) {
             Assert.assertNotNull("Array is Not null", "data.connectConsoleFinancialServiceKycRequestInformationInsertOne");
             System.out.println("Array is not null");
-        } else if (value == null) {
+        }else if (value == null) {
             Assert.assertNull("Error: Array should not be null but showing null", "data.connectConsoleFinancialServiceKycRequestInformationInsertOne");
             System.out.println("Error: Array should not be null but showing null");
         }else{
@@ -404,5 +437,35 @@ public class testcase {
         }
     }
 
+    public void queryKycRequestInformationPagination() throws IOException, ConfigurationException {
+        prop.load(file);
+        RestAssured.baseURI = prop.getProperty("baseUrl2");
 
+        String query = "{\"query\":\"query ConnectConsoleFinancialServiceKycRequestInformationPagination($input: PaginationInput!) {\\n  connectConsoleFinancialServiceKycRequestInformationPagination(input: $input) {\\n    result {\\n      client_app {\\n        name\\n      }\\n      gkyc_user {\\n        first_name\\n        middle_name\\n        last_name\\n      }\\n      status\\n      sort_order\\n      is_active\\n    }\\n  }\\n}\",\"variables\":{\"input\":{\"skip\":0,\"take\":5}},\"operationName\":\"ConnectConsoleFinancialServiceKycRequestInformationPagination\"}";
+        Response res =
+                given()
+                        .contentType("application/json").headers("Authorization", prop.getProperty("token")).header("x-device-id", prop.getProperty("x-device-id")).header("x-app-id", prop.getProperty("x-app-id"))
+                        .body(query).
+                        when()
+                        .post("/graphql").
+                        then().log().all()
+                        .assertThat().statusCode(200).extract().response();
+
+        JsonPath response = res.jsonPath();
+        System.out.println(res.asString());
+
+        String value = response.get("data.connectConsoleFinancialServiceKycRequestInformationPagination.result").toString();
+        System.out.println("Array is "+ value);
+
+        if(value != null){
+            Assert.assertNotNull("Array is Not Empty", "data.connectConsoleFinancialServiceKycRequestInformationPagination.result");
+            System.out.println("Array is Not Empty");
+        }else if (value == null) {
+            Assert.assertNull("Error: Array should not be null but showing null", "data.connectConsoleFinancialServiceKycRequestInformationPagination.result");
+            System.out.println("Error: Array should not be null but showing null");
+        }else{
+            System.out.println("Errors");
+            Assert.fail("Errors");
+        }
+    }
 }

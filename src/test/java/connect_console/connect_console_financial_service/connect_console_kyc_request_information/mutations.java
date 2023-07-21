@@ -8,30 +8,30 @@ import java.io.IOException;
 
 public class mutations {
     @Test(description = "Check if Kyc_reqest_no will contain exactly 10 characters long, consists of alphanumeric capital letters, and does not contain any special characters")
-    public void MutationKycRequest() throws IOException, ConfigurationException {
+    public void KycRequestInformationClientKycRequest() throws IOException, ConfigurationException {
         testcase user=new testcase();
-        user.mutationKycRequest();
+        user.mutationKycRequestInformationClientKycRequest();
     }
 
     @Test(description = "Kyc Bulk: Check if File has been successfully uploaded")
-    public void MutationKycBulkRequest() throws IOException, ConfigurationException {
+    public void KycRequestInformationClientKycBulkRequest() throws IOException, ConfigurationException {
         testcase user=new testcase();
-        user.mutationKycBulkRequest();
+        user.mutationKycRequestInformationClientKycBulkRequest();
     }
 
     @Test(description = "Check if statement_request_no will contain exactly 10 characters long, consists of alphanumeric capital letters, and does not contain any special characters")
-    public void MutationStatementRequest() throws IOException, ConfigurationException {
+    public void StatementRequestInformationClientStatementRequest() throws IOException, ConfigurationException {
         testcase user=new testcase();
-        user.mutationStatementRequest();
+        user.mutationStatementRequestInformationClientStatementRequest();
     }
 
     @Test(description = "Statement Bulk: Check if File has been successfully uploaded")
-    public void MutationStatementBulkRequest() throws IOException, ConfigurationException {
+    public void StatementRequestInformationClientStatementBulkRequest() throws IOException, ConfigurationException {
         testcase user=new testcase();
-        user.mutationStatementBulkRequest();
+        user.mutationStatementRequestInformationClientStatementBulkRequest();
     }
-    @Test(description = "Check if user is able to KycRequestInformationInsertOne")
-    public void MutationKycRequestInformationInsertOne() throws IOException, ConfigurationException {
+    @Test(description = "Check if user is able to insert one request by KycRequestInformationInsertOne")
+    public void KycRequestInformationInsertOne() throws IOException, ConfigurationException {
         testcase user=new testcase();
         user.mutationKycRequestInformationInsertOne();
     }

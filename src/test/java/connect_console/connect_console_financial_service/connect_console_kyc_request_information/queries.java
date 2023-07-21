@@ -7,13 +7,13 @@ import java.io.IOException;
 
 public class queries {
     @Test(description = "Check if Country info array is not null")
-    public void countryInfo() throws IOException, ConfigurationException {
+    public void CountryInfo() throws IOException, ConfigurationException {
         testcase user=new testcase();
         user.queryCountryInfo();
     }
 
     @Test(description = "Check if user is able to login to connect console")
-    public void login() throws IOException, ConfigurationException {
+    public void Login() throws IOException, ConfigurationException {
         testcase user=new testcase();
         user.loginAPI();
     }
@@ -22,9 +22,20 @@ public class queries {
         testcase user=new testcase();
         user.queryUserInfoFindAll();
     }
-    @Test(description = "Check if Kyc Request Information array is not null")
-    public void KycRequestInformation() throws IOException, ConfigurationException {
+    @Test(description = "Check if Client Kyc Request Information array is not null")
+    public void KycRequestInformationClientKycRequestsByUserAndApp() throws IOException, ConfigurationException {
         testcase user=new testcase();
-        user.queryKycRequestInformation();
+        user.queryKycRequestInformationClientKycRequestsByUserAndApp();
+    }
+
+    @Test(description = "Check if Kyc Request Information Pagination array is not null")
+    public void KycRequestInformationPagination() throws IOException, ConfigurationException {
+        testcase user=new testcase();
+        user.queryKycRequestInformationPagination();
+    }
+    @Test(description = "Check if Client Statement Request Information array is not null")
+    public void StatementRequestInformationClientStatementRequestsByUserAndApp() throws IOException, ConfigurationException {
+        testcase user=new testcase();
+        user.queryStatementRequestInformationClientStatementRequestsByUserAndApp();
     }
 }
