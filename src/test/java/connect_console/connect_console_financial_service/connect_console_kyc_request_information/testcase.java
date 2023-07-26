@@ -71,11 +71,6 @@ public class testcase {
         prop.load(file);
         RestAssured.baseURI = prop.getProperty("baseUrl2");
 
-        //Mehedi Hasan account
-        //String query = "{\"query\":\"query ConnectConsoleLoginWithPassword($input: ConnectConsoleLoginWithPasswordInput!) {\\r\\n  connectConsoleLoginWithPassword(input: $input) {\\r\\n    connect_id\\r\\n    device_is_verified\\r\\n    _token\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"connect_id\":\"+8801303865986\",\"user_pass\":\"123123\"}},\"operationName\":\"ConnectConsoleLoginWithPassword\"}";
-        //String query ="{\"query\":\"query ConnectConsoleLoginWithPassword($input: ConnectConsoleLoginWithPasswordInput!) {\\r\\n  connectConsoleLoginWithPassword(input: $input) {\\r\\n    connect_id\\r\\n    device_is_verified\\r\\n    _token\\r\\n  }\\r\\n}\",\"variables\":{\"input\":{\"connect_id\":\"+8801303865986\",\"user_pass\":\"123123\",\"device_token\":\"617404\"}},\"operationName\":\"ConnectConsoleLoginWithPassword\"}";
-        //Mozzammel Haque acount
-        String query = "{\"query\":\"query ConnectConsoleLoginWithPassword($input: ConnectConsoleLoginWithPasswordInput!) {\\n  connectConsoleLoginWithPassword(input: $input) {\\n    connect_id\\n    device_is_verified\\n    _token\\n  }\\n}\",\"variables\":{\"input\":{\"connect_id\":\"+8801674831500\",\"user_pass\":\"123123\"}},\"operationName\":\"ConnectConsoleLoginWithPassword\"}";
 
         Response res =
                 given()
@@ -113,6 +108,7 @@ public class testcase {
         RestAssured.baseURI = prop.getProperty("baseUrl2");
 
         String query = "{\"query\":\"query ConnectConsoleUserServiceUserInformationFindAll {\\r\\n  connectConsoleUserServiceUserInformationFindAll {\\r\\n    connect_id\\r\\n    last_name\\r\\n  }\\r\\n}\",\"variables\":{},\"operationName\":\"ConnectConsoleUserServiceUserInformationFindAll\"}";
+
         Response res =
                 given()
                         .contentType("application/json").headers("Authorization", prop.getProperty("token")).header("x-device-id", prop.getProperty("x-device-id")).header("x-app-id", prop.getProperty("x-app-id"))
@@ -342,7 +338,7 @@ public class testcase {
         //System.out.println("Array is "+ value);
 
         String statement_request_no = response.get("data.connectConsoleFinancialServiceStatementRequestInformationClientStatementRequest.statement_request_no").toString();
-        System.out.println("kyc_request_no is "+ statement_request_no);
+        System.out.println("statement_request_no is "+ statement_request_no);
 
         // Will validate exactly 10 characters long, consists of alphanumeric capital letters, and does not contain any special characters:
         String pattern = "^[A-Z0-9]{10}$";
